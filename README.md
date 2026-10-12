@@ -12,6 +12,8 @@ Rompecabezas de ajedrez en un tablero de 3 × 3 para jugar en el iPhone, inspira
 
 Después de abrirlo una vez con conexión, también se puede jugar sin internet.
 
+El juego sigue el modo claro u oscuro del iPhone. En **Ajustes → Apariencia** puedes dejarlo fijo en **Claro** o **Nocturno**.
+
 ## Reglas
 
 - Mueve las piezas hasta que cada una quede en la casilla que marca la **carta objetivo**.
