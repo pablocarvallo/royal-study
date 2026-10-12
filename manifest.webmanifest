@@ -1,0 +1,17 @@
+{
+  "name": "The Royal Study",
+  "short_name": "Royal Study",
+  "description": "Rompecabezas de ajedrez 3×3: predice tus jugadas y lleva las piezas a la carta objetivo.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#122720",
+  "theme_color": "#122720",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
