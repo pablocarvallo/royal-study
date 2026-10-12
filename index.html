@@ -280,12 +280,27 @@ h1{margin:6px 0 0;font-family:var(--f-display);font-weight:400;font-size:clamp(4
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 /* Versión independiente: márgenes del iPhone (muesca y barra inferior) */
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:max(calc(env(safe-area-inset-bottom,0px) - 8px),0px)}
 html{background:linear-gradient(var(--band) 0 50%,var(--bg) 50%)}
 </style>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
+<script>
+/* iOS, app en la pantalla de inicio: el sistema informa una altura menor que la pantalla
+   (le resta la barra de estado) y deja una franja vacía abajo. Se usa la altura real de la pantalla. */
+(function () {
+  if (!window.navigator.standalone) return;
+  function fit() {
+    var land = window.innerWidth > window.innerHeight;
+    var h = land ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
+    document.documentElement.style.height = h + 'px';
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', function () { setTimeout(fit, 300); });
+})();
+</script>
 </head>
 <body>
 
