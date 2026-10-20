@@ -1,6 +1,6 @@
 // Permite jugar sin conexión: guarda el juego, los íconos y las fuentes.
 // Con conexión siempre se usa la versión más reciente del juego.
-const CACHE = 'royal-study-v4-ds1';
+const CACHE = 'royal-study-v5-classic';
 const CORE = ['./', './index.html', './manifest.webmanifest', './apple-touch-icon.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', (e) => {
