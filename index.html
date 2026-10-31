@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>The Royal Study</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -607,6 +607,7 @@ html{background:linear-gradient(var(--band) 0 50%,var(--bg) 50%)}
   window.addEventListener('orientationchange', function () { setTimeout(fit, 300); });
 })();
 </script>
+<style>/* Sin zoom con los dedos ni con doble toque: se usa como app instalada, no como página */ html { touch-action: pan-x pan-y; }</style>
 </head>
 <body>
 
@@ -1668,6 +1669,13 @@ if (typeof module !== 'undefined') module.exports = RS;
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
   window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
 }
+</script>
+<script>
+// Sin zoom con los dedos: Safari en iPhone no siempre respeta «user-scalable=no», así que se cortan sus gestos de zoom
+(function () {
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach(function (t) { document.addEventListener(t, function (e) { e.preventDefault(); }, { passive: false }); });
+  document.addEventListener('touchmove', function (e) { if (e.touches && e.touches.length > 1) e.preventDefault(); }, { passive: false });
+})();
 </script>
 </body>
 </html>
