@@ -43,10 +43,21 @@ El juego sigue el modo claro u oscuro del iPhone. En **Ajustes → Apariencia** 
 
 Un jugador apuesta en cuántas jugadas resuelve la carta; el otro acepta o apuesta menos. Quien tiene la apuesta más baja resuelve: si lo logra gana el punto, si no, el punto es para el rival. Las piezas quedan donde terminaron y se reparte una carta nueva. Gana quien llega primero a 6 puntos.
 
+## Ajedrez guiado
+
+Partida completa de ajedrez contra una máquina de nivel bajo, pensada para aprender de a poco. Se abre desde **Más juegos** en el inicio de The Royal Study, o directo en https://pablocarvallo.github.io/royal-study/ajedrez/ (también se puede agregar a inicio como app aparte).
+
+- Después de cada jugada de la máquina, una tarjeta explica qué hizo y por qué (capturas, amenazas, jaques, clavadas, desarrollo, centro, errores).
+- En tu turno aparecen hasta tres opciones sugeridas con su explicación; al tocarlas se ven en el tablero con una flecha verde.
+- Si tu jugada pierde material, permite un mate o ahoga al rey rival, avisa antes de que responda la máquina. «Deshacer» funciona siempre.
+- Tres niveles: **Primeros pasos**, **Aprendiz** y **Aficionado**. Se puede jugar con blancas, negras o al azar.
+- La partida en curso se guarda en el iPhone y se retoma al volver a abrir.
+
 ## Archivos
 
 - `index.html`: el juego completo (reglas, generador de estudios y cálculo del mínimo de jugadas).
 - `manifest.webmanifest`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`: datos e iconos para instalarlo como app.
 - `sw.js`: guarda una copia para jugar sin conexión.
+- `ajedrez/`: Ajedrez guiado. `index.html` trae el motor (`/*MOTOR:START*/`), el profesor y la máquina (`/*PROFESOR:START*/`) y la interfaz; tiene su propio `sw.js`, manifiesto e iconos (rey negro sobre fondo blanco).
 
 Proyecto personal sin afiliación con la marca *The Royal Study*.

@@ -501,6 +501,8 @@ h1 { font-weight: 700; letter-spacing: -0.035em; line-height: 1; }
 .card-in { border-color: rgba(14, 27, 51, 0.7); }
 .cc { border-color: rgba(14, 27, 51, 0.35); }
 .cc.dark { background: rgba(41, 80, 244, 0.12); }
+a.more-btn { color: inherit; text-decoration: none; }
+.more-ic { width: 40px; height: 40px; border-radius: 23%; box-shadow: 0 0 0 .5px rgba(0, 0, 0, .12), 0 3px 8px rgba(0, 0, 0, .15); }
 
 /*DS:APP:END*/
 
@@ -643,6 +645,13 @@ html{background:linear-gradient(var(--band) 0 50%,var(--bg) 50%)}
         <span class="lv-desc">En este mismo iPhone. Pujen por la menor cantidad de jugadas; gana quien llega a 6 puntos.</span>
         <span class="lv-icons" id="duoIcons"></span>
       </button>
+
+      <h2 class="sec">Más juegos</h2>
+      <a class="duo-btn more-btn" href="ajedrez/">
+        <span class="lv-name">Ajedrez guiado</span>
+        <span class="lv-desc">Partida completa contra una máquina fácil que explica cada jugada y te sugiere las tuyas.</span>
+        <span class="lv-icons"><img class="more-ic" src="ajedrez/apple-touch-icon.png?v=1" alt=""></span>
+      </a>
 
       <div class="home-foot">
         <button class="link-btn" id="btnRules"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4V14M12 17.2v.1"/></svg>Cómo jugar</button>

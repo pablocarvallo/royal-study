@@ -1,6 +1,6 @@
 // Permite jugar sin conexión: guarda el juego, los íconos y las fuentes.
 // Con conexión siempre se usa la versión más reciente del juego.
-const CACHE = 'royal-study-v6-classic-b1';
+const CACHE = 'royal-study-v7-ajedrez';
 const CORE = ['./', './index.html', './manifest.webmanifest', './apple-touch-icon.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', (e) => {
@@ -10,7 +10,8 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      // Solo borra versiones antiguas de este juego: el resto de la caché es de las otras apps (como Ajedrez)
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('royal-study-') && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
