@@ -58,6 +58,6 @@ Partida completa de ajedrez contra una máquina de nivel bajo, pensada para apre
 - `index.html`: el juego completo (reglas, generador de estudios y cálculo del mínimo de jugadas).
 - `manifest.webmanifest`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`: datos e iconos para instalarlo como app.
 - `sw.js`: guarda una copia para jugar sin conexión.
-- `ajedrez/`: Ajedrez guiado. `index.html` trae el motor (`/*MOTOR:START*/`), el profesor y la máquina (`/*PROFESOR:START*/`) y la interfaz; tiene su propio `sw.js`, manifiesto e iconos (rey negro sobre fondo blanco).
+- `ajedrez/`: Ajedrez guiado. `index.html` trae el motor (`/*MOTOR:START*/`), el profesor y la máquina (`/*PROFESOR:START*/`) y la interfaz; tiene su propio `sw.js`, manifiesto e iconos (dama negra sobre fondo blanco).
 
 Proyecto personal sin afiliación con la marca *The Royal Study*.
